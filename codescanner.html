@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qr code scnner and reader</title>
+  <style>
+    body{
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+    .container{
+      height:300px;
+      width: 30%;
+      border: 2px dashed blue;
+    }
+    .container h3{
+      text-align: center;
+    }
+    .qrcode{
+    
+    }
+    .qrcode img{
+      margin-bottom: 20px;
+      height: 100px;
+      position: relative;
+      left: 200px;
+      border: 1px solid;
+      width: 100px;
+      border-radius: 50px;
+     
+    }
+    .qrcode input{
+      display: none;
+    }
+    .detail{
+      position: relative;
+      margin: 20px;
+      left: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Qr code scanner and reader</h3>
+    <div class="qrcode">
+      <img src="image/png" id="images">
+      <label for="uloadimage">upload</label>
+      <input id="uloadimage" type="file" accept="image/png,image/jpg">
+    </div>
+  </div>
+  <script>
+    
+    let image=document.querySelector('#images');
+    let upload=document.querySelector('#uloadimage');
+ upload.onchange= function showdata(){
+      image.src=URL.createObjectURL(upload.files[0]);    
+    }
+  </script>
+  
+</body>
+</html>
